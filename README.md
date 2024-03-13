@@ -2,7 +2,7 @@
  
  # **Project**
 
- "Data Warehouse for Bike Share Data Analytics" assignment from UDACITY course "Data Engineering with Microsoft Azure".
+ This project called "Data Warehouse for Bike Share Data Analytics" is an assignment from the UDACITY course "Data Engineering with Microsoft Azure".
 
 # **Project Overview**
 
@@ -45,4 +45,27 @@ You are being provided a relational schema that describes the data as it exists 
 
 ![star_schema_bikes](https://github.com/eloisjr/Azure_Data_Warehouse/assets/81710422/02e335d1-c1f5-4419-b63e-8c92523437cb)
 
+# **Task 3: Create the data in PostgreSQL** 
+
+You first must create the data in PostgreSQL. This will simulate the production environment where the data is being used in the OLTP system. This can be done using the Python script provided for you in Github: ProjectDataToPostgres.py.
+
+1. Download the script file and place it in a folder where you can run a Python script
+2. Download the data files(opens in a new tab) from the classroom resources
+3. Open the script file in VS Code and add the host, username, and password information for your PostgreSQL database
+4. Run the script and verify that all four data files are copied/uploaded into PostgreSQL
+5. You can verify this data exists by using pgAdmin or a similar PostgreSQL data tool.
+
+# **Task 4: EXTRACT the data from PostgreSQL**
+
+In your Azure Synapse workspace, you will use the ingest wizard to create a one-time pipeline that ingests the data from PostgreSQL into Azure Blob Storage. This will result in all four tables being represented as text files in Blob Storage, ready for loading into the data warehouse.
+
+# **Task 5: LOAD the data into external tables in the data warehouse**
+
+Once in Blob storage, the files will be shown in the data lake node in the Synapse Workspace. From here, you can use the script-generating function to load the data from blob storage into external staging tables in the data warehouse you created using the serverless SQL Pool.
+
+# **Task 6: TRANSFORM the data to the star schema using CETAS**
+
+Write SQL scripts to transform the data from the staging tables to the final star schema you designed.
+
+The serverless SQL pool won't allow you to create persistent tables in the database, as it has no local storage. So, use CREATE EXTERNAL TABLE AS SELECT (CETAS) instead. CETAS is a parallel operation that creates external table metadata and exports the SELECT query results to a set of files in your storage account.
 
