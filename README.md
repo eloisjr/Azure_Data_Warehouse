@@ -32,4 +32,17 @@ The business outcomes you are designing for are as follows:
  - Based on how many rides the rider averages per month
  - Based on how many minutes the rider spends on a bike per month
 
+# **Task 1: Create your Azure resources**
+
+1.	Create an Azure Database for PostgreSQL.
+2.	Create an Azure Synapse workspace.
+3. Use the built-in serverless SQL pool and database within the Synapse workspace.
+
+
+# **Task 2: Design a star schema**
+
+You are being provided a relational schema that describes the data as it exists in PostgreSQL. In addition, you have been given a set of business requirements related to the data warehouse. Below is the star schema using fact and dimension tables.
+
+![star_schema_bikes](https://github.com/eloisjr/Azure_Data_Warehouse/assets/81710422/02e335d1-c1f5-4419-b63e-8c92523437cb)
+
 
